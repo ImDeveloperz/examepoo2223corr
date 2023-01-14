@@ -1,19 +1,20 @@
 #include<iostream>
 #include<string.h>
 #include"Livre.h"
+using namespace std;
 Livre::Livre(float prix,bool p,char *titre): prix(prix),index(p){
     //copier titre dans titre
-     for(int  i=0;i<=strelen(titre);i++)
+     for(int  i=0;i<=strlen(titre);i++)
         this->titre[i]=titre[i];
 }
 Livre::Livre(const Livre & livre){
     prix=livre.prix;
     index=livre.index;
     //copier titre dans titre
-    for(int  i=0;i<=strelen(titre);i++)
+    for(int  i=0;i<=strlen(titre);i++)
         titre[i]=livre.titre[i];
 }
-void Livre::afficher(){
+void Livre::Afficher(){
     cout<<"le prix du livre est : "<<prix<<endl;
     if(index) cout<<"le livre est indexe"<<endl;
     else  cout<<"le livre n'est pas indexe"<<endl;
@@ -28,7 +29,7 @@ char* Livre::getTitre(){
 }
 
 Livre::~Livre(){
-    delete char;
+    delete titre;
 }
 
 bool Livre::operator==(const Livre &livre){
